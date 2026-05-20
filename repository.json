@@ -1,0 +1,11 @@
+{
+  "name": "Personal game manifests",
+  "description": "Set of manifests for personally supported games on pyrage.",
+  "maintainers": [
+    "HellLord77"
+  ],
+  "manifests": [
+    "hkrpg_global.json",
+    "nap_global.json"
+  ]
+}

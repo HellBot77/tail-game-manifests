@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "display_name": "",
+  "biz": "hkrpg_global",
+  "latest_version": "0.0.0",
+  "game_versions": [],
+  "telemetry_hosts": [],
+  "paths": {
+    "audio_pkg_res_dir": "",
+    "exe_filename": "_.exe",
+    "installation_dir": "",
+    "screenshot_dir": "",
+    "screenshot_dir_relative_to": ""
+  },
+  "assets": {
+    "game_icon": "http://_/_.png",
+    "game_background": "http://_/_.png",
+    "game_live_background": ""
+  },
+  "extra": {
+    "preload": {},
+    "switches": {
+      "fps_unlocker": false,
+      "jadeite": false,
+      "xxmi": false,
+      "graphics_api": false
+    },
+    "compat_overrides": {
+      "install_to_prefix": false,
+      "disable_protonfixes": true,
+      "protonfixes_id": "",
+      "protonfixes_store": "",
+      "stub_wintrust": false,
+      "block_first_req": false,
+      "proton_compat_config": [],
+      "override_runner": {
+        "linux": {
+          "enabled": false,
+          "runner_version": ""
+        },
+        "macos": {
+          "enabled": false,
+          "runner_version": ""
+        }
+      },
+      "min_runner_versions": [],
+      "winetricks_verbs": []
+    },
+    "fps_unlock_options": [],
+    "steam_import_config": {
+      "enabled": false,
+      "steam_appid_txt": "",
+      "steam_api_dll": ""
+    },
+    "graphics_api_options": {
+      "options": [],
+      "default": ""
+    }
+  }
+}
