@@ -1,25 +1,21 @@
-name: Update game manifests
+name: Update manifests
 
 on:
   schedule:
-    - cron: "0 */2 * * *" # Every 2 hours
+    - cron: "0 12 * * *"
   workflow_dispatch:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   run-scripts-and-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Setup uv
+      - name: Install uv
         uses: astral-sh/setup-uv@v8.1.0
 
-      - name: Populate generated dir
+      - name: Copy to generated
         run: |
           mkdir -p scripts/generated
           jq -r .manifests[] repository.json | while read -r manifest; do
@@ -27,7 +23,7 @@ jobs:
             cp $manifest scripts/generated/
           done
 
-      - name: Run all scripts
+      - name: Run scripts
         run: |
           for script in scripts/*.py; do
             echo "======================================"
@@ -44,18 +40,17 @@ jobs:
             echo
           done
 
-      - name: Move generated JSONs to root
+      - name: Move from generated
         run: mv scripts/generated/*.json .
 
-      - name: Direct push safe manifests
+      - name: Push changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add *.json
-          if git diff --cached --quiet; then
-            echo "" >> $GITHUB_OUTPUT
-          else
-            git commit -m "Automated: Update safe manifests"
+
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(manifests): update"
             git push origin main
             git fetch origin main
           fi
