@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "display_name": "",
-  "biz": "hkrpg_global",
+  "display_name": "Honkai: StarRail (China)",
+  "biz": "hkrpg_cn",
   "latest_version": "4.2.0",
   "game_versions": [
     {

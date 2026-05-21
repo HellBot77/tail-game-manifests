@@ -3,27 +3,28 @@
 #   "anyio",
 #   "pydantic-extra-types[semver]",
 #
-#   "play-launcher-sdk @ git+https://github.com/HellLord77/play-launcher-sdk.git@v0.2.2",
-#   "tail-launcher-sdk @ git+https://github.com/HellLord77/tail-launcher-sdk.git@v0.2.3",
+#   "play-launcher-sdk @ git+https://github.com/HellLord77/play-launcher-sdk.git@v0.3.1",
+#   "tail-launcher-sdk @ git+https://github.com/HellLord77/tail-launcher-sdk.git@v0.2.4",
 # ]
 # ///
+
+from pathlib import PurePosixPath
 from typing import Iterable
 
 from anyio import Path, run
-from play_launcher_sdk import AsyncLauncher, ChinaId, GameBiz, GlobalId
-from play_launcher_sdk.id import Id
-from play_launcher_sdk.models.game_info import GameInfo
+from play_launcher_sdk import AsyncLauncher, ChinaLauncherId, GameBiz, GlobalLauncherId
+from play_launcher_sdk.launcher_id import LauncherId
 from play_launcher_sdk.models.game_package import GamePackage
-from play_launcher_sdk.models.game_status import GameStatus
 from pydantic import HttpUrl
 from pydantic_extra_types.semantic_version import SemanticVersion
-from tail_launcher_sdk.enums import DiffType, DownloadMode, RegionCode
+from tail_launcher_sdk.enums import DiffType, DirType, DownloadMode, RegionCode
 from tail_launcher_sdk.models import GameManifest
 from tail_launcher_sdk.models.diff_audio_file import DiffAudioFile
 from tail_launcher_sdk.models.diff_game_file import DiffGameFile
 from tail_launcher_sdk.models.diff_urls import DiffUrls
 from tail_launcher_sdk.models.full_audio_file import FullAudioFile
 from tail_launcher_sdk.models.full_game_file import FullGameFile
+from tail_launcher_sdk.models.game_paths import GamePaths
 from tail_launcher_sdk.models.game_version import GameVersion
 from tail_launcher_sdk.models.version_assets import VersionAssets
 from tail_launcher_sdk.models.version_audio_files import VersionAudioFiles
@@ -31,11 +32,11 @@ from tail_launcher_sdk.models.version_game_files import VersionGameFiles
 from tail_launcher_sdk.models.version_metadata import VersionMetadata
 
 PLAY_ID_TO_TAIL_REGION = {
-    GlobalId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_ASIA: RegionCode.ASIA,
-    GlobalId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_GLOBAL: RegionCode.GLB,
-    GlobalId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_JAPAN: RegionCode.JP,
-    GlobalId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_KOREA: RegionCode.KR,
-    GlobalId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_SEA: RegionCode.OVERSEAS,
+    GlobalLauncherId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_ASIA: RegionCode.ASIA,
+    GlobalLauncherId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_GLOBAL: RegionCode.GLB,
+    GlobalLauncherId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_JAPAN: RegionCode.JP,
+    GlobalLauncherId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_KOREA: RegionCode.KR,
+    GlobalLauncherId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_SEA: RegionCode.OVERSEAS,
 }
 
 
@@ -55,21 +56,52 @@ def index_version(manifest: GameManifest, version: SemanticVersion) -> int | Non
     return None
 
 
-def updated_assets(
-    version: GameVersion, status: GameStatus, info: GameInfo
-) -> GameVersion:
-    for background in info.backgrounds:
-        assert status.display.icon.url != ""
-        assert background.background.url != ""
+async def get_paths(id: LauncherId, biz: GameBiz) -> GamePaths:
+    launcher = AsyncLauncher(id)
+    configs = await launcher.get_game_configs()
+    config = find(configs.launch_configs, biz)
+    assert config is not None
 
-        assets = VersionAssets(
-            game_icon=status.display.icon.url,
+    return GamePaths(
+        audio_pkg_res_dir=PurePosixPath(config.audio_pkg_res_dir),
+        exe_filename=PurePosixPath(config.exe_file_name),
+        installation_dir=PurePosixPath(config.installation_dir),
+        screenshot_dir=PurePosixPath(config.game_screenshot_dir),
+        screenshot_dir_relative_to=(
+            DirType.DATA
+            if config.game_screenshot_dir.parts[0].endswith("_Data")
+            else DirType.GAME
+        ),
+    )
+
+
+async def get_assets(
+    launcher: AsyncLauncher,
+    biz: GameBiz,
+) -> VersionAssets | None:
+    all_basic_info = await launcher.get_all_game_basic_info()
+    info = find(all_basic_info.game_info_list, biz)
+    assert info is not None
+
+    for background in info.backgrounds:
+        if background.icon.url == "":
+            games = await launcher.get_games()
+            status = find(games.games, biz)
+            assert status is not None
+
+            assert status.display.icon.url != ""
+            icon = status.display.icon.url
+        else:
+            icon = background.icon.url
+
+        assert background.background.url != ""
+        return VersionAssets(
+            game_icon=icon,
             game_background=background.background.url,
             game_live_background=background.video.url,
         )
-        return version.model_copy(update={"assets": assets})
 
-    return version
+    return None
 
 
 def play_package_to_tail_version(package: GamePackage) -> GameVersion:
@@ -146,23 +178,19 @@ def play_package_to_tail_version(package: GamePackage) -> GameVersion:
     )
 
 
-async def get_version(id: Id, biz: GameBiz) -> GameVersion:
+async def get_version(id: LauncherId, biz: GameBiz) -> GameVersion:
     launcher = AsyncLauncher(id)
 
     packages = await launcher.get_game_packages()
     package = find(packages.game_packages, biz)
     assert package is not None
-
-    games = await launcher.get_games()
-    status = find(games.games, biz)
-    assert status is not None
-
-    all_basic_info = await launcher.get_all_game_basic_info()
-    info = find(all_basic_info.game_info_list, biz)
-    assert info is not None
-
     version = play_package_to_tail_version(package)
-    return updated_assets(version, status, info)
+
+    assets = await get_assets(launcher, biz)
+    if assets is not None:
+        version = version.model_copy(update={"assets": assets})
+
+    return version
 
 
 def update_region_code(version: GameVersion, region_code: RegionCode) -> None:
@@ -173,7 +201,9 @@ def update_region_code(version: GameVersion, region_code: RegionCode) -> None:
         version.audio.full[index] = file.model_copy(update={"region_code": region_code})
 
 
-async def get_version_bh3(id: GlobalId, append_ids: Iterable[GlobalId]) -> GameVersion:
+async def get_version_bh3(
+    id: GlobalLauncherId, append_ids: Iterable[GlobalLauncherId]
+) -> GameVersion:
     version = await get_version(id, GameBiz.HONKAI_IMPACT_3RD_GLOBAL)
     update_region_code(version, PLAY_ID_TO_TAIL_REGION[id])
 
@@ -187,7 +217,7 @@ async def get_version_bh3(id: GlobalId, append_ids: Iterable[GlobalId]) -> GameV
     return version
 
 
-async def append_manifest(id: Id, biz: GameBiz):
+async def append_manifest(id: LauncherId, biz: GameBiz):
     path = Path(__file__).parent / "generated" / f"{biz}.json"
     print(f"[#] {biz}: {path}")
 
@@ -195,13 +225,23 @@ async def append_manifest(id: Id, biz: GameBiz):
     manifest = GameManifest.model_validate_json(read)
 
     if biz == GameBiz.HONKAI_IMPACT_3RD_GLOBAL:
-        assert isinstance(id, GlobalId)
+        assert isinstance(id, GlobalLauncherId)
         append_ids = list(PLAY_ID_TO_TAIL_REGION)
         append_ids.remove(id)
 
         version = await get_version_bh3(id, append_ids)
     else:
         version = await get_version(id, biz)
+
+    parts = manifest.display_name.rsplit(maxsplit=1)
+    parts.insert(1, str(version.metadata.version))
+    version = version.model_copy(
+        update={
+            "metadata": version.metadata.model_copy(
+                update={"versioned_name": " ".join(parts)}
+            )
+        }
+    )
 
     index = index_version(manifest, version.metadata.version)
     if index is None:
@@ -211,8 +251,13 @@ async def append_manifest(id: Id, biz: GameBiz):
         print(f"[~] {biz}: {version.metadata.version}")
         manifest.game_versions[index] = version
 
+    paths = await get_paths(id, biz)
     manifest = manifest.model_copy(
-        update={"latest_version": version.metadata.version, "assets": version.assets}
+        update={
+            "latest_version": version.metadata.version,
+            "paths": paths,
+            "assets": version.assets,
+        }
     )
     write = manifest.model_dump_json(indent=2)
 
@@ -225,15 +270,15 @@ async def append_manifest(id: Id, biz: GameBiz):
 
 async def main():
     play = {
-        GlobalId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_GLOBAL: (
+        GlobalLauncherId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_GLOBAL: (
             GameBiz.HONKAI_IMPACT_3RD_GLOBAL,
         ),
-        GlobalId.OFFICIAL: (
+        GlobalLauncherId.OFFICIAL: (
             GameBiz.GENSHIN_IMPACT_GLOBAL,
             GameBiz.HONKAI_STAR_RAIL_GLOBAL,
             GameBiz.ZENLESS_ZONE_ZERO_GLOBAL,
         ),
-        ChinaId.OFFICIAL: (
+        ChinaLauncherId.OFFICIAL: (
             GameBiz.GENSHIN_IMPACT_CHINA,
             GameBiz.HONKAI_IMPACT_3RD_CHINA,
             GameBiz.HONKAI_STAR_RAIL_CHINA,

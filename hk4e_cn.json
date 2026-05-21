@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "display_name": "",
-  "biz": "hk4e_global",
+  "display_name": "GenshinImpact (China)",
+  "biz": "hk4e_cn",
   "latest_version": "5.5.0",
   "game_versions": [
     {
