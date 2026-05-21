@@ -2,8 +2,80 @@
   "version": 1,
   "display_name": "",
   "biz": "bh3_global",
-  "latest_version": "0.0.0",
-  "game_versions": [],
+  "latest_version": "8.8.0",
+  "game_versions": [
+    {
+      "metadata": {
+        "versioned_name": "",
+        "version": "8.8.0",
+        "download_mode": "DOWNLOAD_MODE_FILE",
+        "game_hash": "",
+        "index_file": "",
+        "res_list_url": "https://autopatchglb.honkaiimpact3.com/ptpublic/bh3_glb/20260421111037_sCCv26Z0nXxaSHy5/extract",
+        "diff_list_url": {
+          "game": "",
+          "en_us": "",
+          "zh_cn": "",
+          "ja_jp": "",
+          "ko_kr": ""
+        }
+      },
+      "assets": {
+        "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2024/09/25/3526a039dddb4c8ca9d1083555f5781b_6841086697744260757.png",
+        "game_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/04/28/c821918282f90c8a9a976a1acb2bcd56_3923951149205789915.webp",
+        "game_live_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/04/28/5d431ea69cf1c7cb9b1a1084259d3e50_2573906814230039772.webm"
+      },
+      "game": {
+        "full": [
+          {
+            "file_url": "https://autopatchglb.honkaiimpact3.com/ptpublic/bh3_glb/20260421111037_sCCv26Z0nXxaSHy5/BH3_v8.8.0_cec468aad479.7z",
+            "compressed_size": 26169248309,
+            "decompressed_size": 52348982378,
+            "file_hash": "4de4a1e6e18c769aafe23c4c55cb171e",
+            "file_path": "",
+            "region_code": "glb_official"
+          },
+          {
+            "file_url": "https://autopatchasia.honkaiimpact3.com/ptpublic/bh3_tw/20260421112917_VhXIQT5ZXmwVqRu2/BH3_v8.8.0_cec468aad479.7z",
+            "compressed_size": 25558557994,
+            "decompressed_size": 51127601748,
+            "file_hash": "4d80904b4470d4693762d1e3ffb60832",
+            "file_path": "",
+            "region_code": "asia_official"
+          },
+          {
+            "file_url": "https://autopatchjp.honkaiimpact3.com/ptpublic/bh3_jp/20260421113518_mzG4RcD0f9aNmZEh/BH3_v8.8.0_cec468aad479.7z",
+            "compressed_size": 25457396026,
+            "decompressed_size": 50925277812,
+            "file_hash": "bde554240cf0626b41c25c8986b21d23",
+            "file_path": "",
+            "region_code": "jp_official"
+          },
+          {
+            "file_url": "https://autopatchkr.honkaiimpact3.com/ptpublic/bh3_kr/20260421113050_xjzsIsJm2Wp2GTmE/BH3_v8.8.0_cec468aad479.7z",
+            "compressed_size": 25544282407,
+            "decompressed_size": 51099050574,
+            "file_hash": "1f11d1e5c5663b00ca29128dea4b09e4",
+            "file_path": "",
+            "region_code": "kr_official"
+          },
+          {
+            "file_url": "https://autopatchos.honkaiimpact3.com/ptpublic/bh3_overseas/20260421111739_jgH07SN6onniVyRp/BH3_v8.8.0_cec468aad479.7z",
+            "compressed_size": 26413032853,
+            "decompressed_size": 52836551466,
+            "file_hash": "7e7bfdd8892c55f79045252601cbf8a8",
+            "file_path": "",
+            "region_code": "overseas_official"
+          }
+        ],
+        "diff": []
+      },
+      "audio": {
+        "full": [],
+        "diff": []
+      }
+    }
+  ],
   "telemetry_hosts": [],
   "paths": {
     "audio_pkg_res_dir": ".",
@@ -13,9 +85,9 @@
     "screenshot_dir_relative_to": ""
   },
   "assets": {
-    "game_icon": "http://_/_.png",
-    "game_background": "http://_/_.png",
-    "game_live_background": ""
+    "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2024/09/25/3526a039dddb4c8ca9d1083555f5781b_6841086697744260757.png",
+    "game_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/04/28/c821918282f90c8a9a976a1acb2bcd56_3923951149205789915.webp",
+    "game_live_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/04/28/5d431ea69cf1c7cb9b1a1084259d3e50_2573906814230039772.webm"
   },
   "extra": {
     "preload": {},

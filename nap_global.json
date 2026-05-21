@@ -11,7 +11,7 @@
         "download_mode": "DOWNLOAD_MODE_FILE",
         "game_hash": "",
         "index_file": "",
-        "res_list_url": "",
+        "res_list_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260414113325_298ZJ0N2i5fBPiaz/SplitAudioZip",
         "diff_list_url": {
           "game": "",
           "en_us": "",
@@ -21,9 +21,9 @@
         }
       },
       "assets": {
-        "game_icon": "http://_/_.png",
-        "game_background": "http://_/_.png",
-        "game_live_background": ""
+        "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2025/06/18/db01dfe29c36a283b774d295b2322b54_6508212206846113861.png",
+        "game_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/05/05/1858bfcdb694846618046d3ac3cbf143_4080707903734721126.webp",
+        "game_live_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/05/05/e979cbf167ddce9a2bdfcf69092f68a3_2710747706004583174.webm"
       },
       "game": {
         "full": [
@@ -264,9 +264,9 @@
     "screenshot_dir_relative_to": ""
   },
   "assets": {
-    "game_icon": "http://_/_.png",
-    "game_background": "http://_/_.png",
-    "game_live_background": ""
+    "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2025/06/18/db01dfe29c36a283b774d295b2322b54_6508212206846113861.png",
+    "game_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/05/05/1858bfcdb694846618046d3ac3cbf143_4080707903734721126.webp",
+    "game_live_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/05/05/e979cbf167ddce9a2bdfcf69092f68a3_2710747706004583174.webm"
   },
   "extra": {
     "preload": {},

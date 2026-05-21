@@ -2,8 +2,48 @@
   "version": 1,
   "display_name": "",
   "biz": "bh3_global",
-  "latest_version": "0.0.0",
-  "game_versions": [],
+  "latest_version": "8.4.0",
+  "game_versions": [
+    {
+      "metadata": {
+        "versioned_name": "",
+        "version": "8.4.0",
+        "download_mode": "DOWNLOAD_MODE_FILE",
+        "game_hash": "",
+        "index_file": "",
+        "res_list_url": "",
+        "diff_list_url": {
+          "game": "",
+          "en_us": "",
+          "zh_cn": "",
+          "ja_jp": "",
+          "ko_kr": ""
+        }
+      },
+      "assets": {
+        "game_icon": "https://launcher-webstatic.mihoyo.com/launcher-public/2024/12/18/fdc95c839e7c750d41e1c208d8cf1223_156217938794052481.png",
+        "game_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/03/31/c821918282f90c8a9a976a1acb2bcd56_1419246427408966956.webp",
+        "game_live_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/03/31/5d431ea69cf1c7cb9b1a1084259d3e50_834996857390695684.webm"
+      },
+      "game": {
+        "full": [
+          {
+            "file_url": "https://autopatchcn.bh3.com/ptpublic/rel/20250717152657_HmMWzKltujR0bm3L/PC/BH3_v8.4.0_589030804b01.7z",
+            "compressed_size": 23003662135,
+            "decompressed_size": 46017810030,
+            "file_hash": "e7aece7f28a667bba9ea0769c30fd16d",
+            "file_path": "",
+            "region_code": ""
+          }
+        ],
+        "diff": []
+      },
+      "audio": {
+        "full": [],
+        "diff": []
+      }
+    }
+  ],
   "telemetry_hosts": [],
   "paths": {
     "audio_pkg_res_dir": ".",
@@ -13,9 +53,9 @@
     "screenshot_dir_relative_to": ""
   },
   "assets": {
-    "game_icon": "http://_/_.png",
-    "game_background": "http://_/_.png",
-    "game_live_background": ""
+    "game_icon": "https://launcher-webstatic.mihoyo.com/launcher-public/2024/12/18/fdc95c839e7c750d41e1c208d8cf1223_156217938794052481.png",
+    "game_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/03/31/c821918282f90c8a9a976a1acb2bcd56_1419246427408966956.webp",
+    "game_live_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/03/31/5d431ea69cf1c7cb9b1a1084259d3e50_834996857390695684.webm"
   },
   "extra": {
     "preload": {},

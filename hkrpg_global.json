@@ -11,7 +11,7 @@
         "download_mode": "DOWNLOAD_MODE_FILE",
         "game_hash": "",
         "index_file": "",
-        "res_list_url": "",
+        "res_list_url": "https://autopatchos.starrails.com/client/download/20260416111610_HV99uSYDoNmz8gCM/PC/unzip",
         "diff_list_url": {
           "game": "",
           "en_us": "",
@@ -21,8 +21,8 @@
         }
       },
       "assets": {
-        "game_icon": "http://_/_.png",
-        "game_background": "http://_/_.png",
+        "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/04/15/3121d3786d0e84aed5bf378746c3bd34_89276922000163047.png",
+        "game_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/05/10/5b0fdc740cbb77e76175665d8bdf4456_8368919418904373861.webp",
         "game_live_background": ""
       },
       "game": {
@@ -230,8 +230,8 @@
     "screenshot_dir_relative_to": ""
   },
   "assets": {
-    "game_icon": "http://_/_.png",
-    "game_background": "http://_/_.png",
+    "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/04/15/3121d3786d0e84aed5bf378746c3bd34_89276922000163047.png",
+    "game_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/05/10/5b0fdc740cbb77e76175665d8bdf4456_8368919418904373861.webp",
     "game_live_background": ""
   },
   "extra": {
