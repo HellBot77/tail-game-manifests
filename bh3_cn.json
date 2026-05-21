@@ -6,7 +6,7 @@
   "game_versions": [
     {
       "metadata": {
-        "versioned_name": "",
+        "versioned_name": "HonkaiImpact 3rd 8.4.0 (China)",
         "version": "8.4.0",
         "download_mode": "DOWNLOAD_MODE_FILE",
         "game_hash": "",
@@ -21,7 +21,7 @@
         }
       },
       "assets": {
-        "game_icon": "https://launcher-webstatic.mihoyo.com/launcher-public/2024/12/18/fdc95c839e7c750d41e1c208d8cf1223_156217938794052481.png",
+        "game_icon": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/03/31/eac49b71e0e318e5ed64e642d92d7925_854548899579022358.png",
         "game_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/03/31/c821918282f90c8a9a976a1acb2bcd56_1419246427408966956.webp",
         "game_live_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/03/31/5d431ea69cf1c7cb9b1a1084259d3e50_834996857390695684.webm"
       },
@@ -47,13 +47,13 @@
   "telemetry_hosts": [],
   "paths": {
     "audio_pkg_res_dir": ".",
-    "exe_filename": "_.exe",
-    "installation_dir": ".",
-    "screenshot_dir": ".",
-    "screenshot_dir_relative_to": ""
+    "exe_filename": "BH3.exe",
+    "installation_dir": "Honkai Impact 3rd Game",
+    "screenshot_dir": "ScreenShot",
+    "screenshot_dir_relative_to": "game_dir"
   },
   "assets": {
-    "game_icon": "https://launcher-webstatic.mihoyo.com/launcher-public/2024/12/18/fdc95c839e7c750d41e1c208d8cf1223_156217938794052481.png",
+    "game_icon": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/03/31/eac49b71e0e318e5ed64e642d92d7925_854548899579022358.png",
     "game_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/03/31/c821918282f90c8a9a976a1acb2bcd56_1419246427408966956.webp",
     "game_live_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/03/31/5d431ea69cf1c7cb9b1a1084259d3e50_834996857390695684.webm"
   },

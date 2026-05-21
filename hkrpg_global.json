@@ -6,7 +6,7 @@
   "game_versions": [
     {
       "metadata": {
-        "versioned_name": "",
+        "versioned_name": "Honkai: StarRail 4.2.0 (Global)",
         "version": "4.2.0",
         "download_mode": "DOWNLOAD_MODE_FILE",
         "game_hash": "",
@@ -21,7 +21,7 @@
         }
       },
       "assets": {
-        "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/04/15/3121d3786d0e84aed5bf378746c3bd34_89276922000163047.png",
+        "game_icon": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/05/10/0e105595b118a929fdab9a1bd4cf239e_2589606712305678569.png",
         "game_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/05/10/5b0fdc740cbb77e76175665d8bdf4456_8368919418904373861.webp",
         "game_live_background": ""
       },
@@ -223,14 +223,14 @@
   ],
   "telemetry_hosts": [],
   "paths": {
-    "audio_pkg_res_dir": ".",
-    "exe_filename": "_.exe",
-    "installation_dir": ".",
-    "screenshot_dir": ".",
-    "screenshot_dir_relative_to": ""
+    "audio_pkg_res_dir": "StarRail_Data/Persistent/Audio/AudioPackage/Windows",
+    "exe_filename": "StarRail.exe",
+    "installation_dir": "Star Rail Games",
+    "screenshot_dir": "StarRail_Data/ScreenShots",
+    "screenshot_dir_relative_to": "data_dir"
   },
   "assets": {
-    "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/04/15/3121d3786d0e84aed5bf378746c3bd34_89276922000163047.png",
+    "game_icon": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/05/10/0e105595b118a929fdab9a1bd4cf239e_2589606712305678569.png",
     "game_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/05/10/5b0fdc740cbb77e76175665d8bdf4456_8368919418904373861.webp",
     "game_live_background": ""
   },
