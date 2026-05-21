@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-scripts-and-pr:
+  update-manifests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -46,11 +46,10 @@ jobs:
       - name: Push changes
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add *.json
 
           if ! git diff --cached --quiet; then
-            git commit -m "chore(manifests): update"
+            git commit -m "chore(manifests): :robot: update"
             git push origin main
-            git fetch origin main
           fi
