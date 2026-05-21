@@ -124,9 +124,13 @@ async def append(id: Id, biz: GameBiz):
 
     package = find_package(packages.game_packages, biz)
     assert package is not None
-    version = play_package_to_tail_version(package, manifest.assets)
 
+    assets = manifest.assets
+    assert assets is not None
+
+    version = play_package_to_tail_version(package, assets)
     index = index_version(manifest, package.main.major.version)
+
     if index is None:
         print(f"[+] {biz}: {package.main.major.version}")
         manifest.game_versions.insert(0, version)
@@ -135,7 +139,7 @@ async def append(id: Id, biz: GameBiz):
         manifest.game_versions[index] = version
 
     manifest = manifest.model_copy(
-        update={"latest_version": package.main.major.version}
+        update={"latest_version": package.main.major.version, "assets": assets}
     )
     write = manifest.model_dump_json(indent=2)
 
@@ -146,10 +150,12 @@ async def append(id: Id, biz: GameBiz):
 async def main():
     play = {
         GlobalId.OFFICIAL: (
+            GameBiz.GENSHIN_IMPACT_GLOBAL,
             GameBiz.HONKAI_STAR_RAIL_GLOBAL,
             GameBiz.ZENLESS_ZONE_ZERO_GLOBAL,
         ),
         ChinaId.OFFICIAL: (
+            GameBiz.GENSHIN_IMPACT_CHINA,
             GameBiz.HONKAI_STAR_RAIL_CHINA,
             GameBiz.ZENLESS_ZONE_ZERO_CHINA,
         ),

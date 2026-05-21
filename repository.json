@@ -5,8 +5,10 @@
     "HellLord77"
   ],
   "manifests": [
+    "hk4e_global.json",
     "hkrpg_global.json",
     "nap_global.json",
+    "hk4e_cn.json",
     "hkrpg_cn.json",
     "nap_cn.json"
   ]
