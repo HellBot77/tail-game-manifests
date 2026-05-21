@@ -6,6 +6,8 @@
   ],
   "manifests": [
     "hkrpg_global.json",
-    "nap_global.json"
+    "nap_global.json",
+    "hkrpg_cn.json",
+    "nap_cn.json"
   ]
 }

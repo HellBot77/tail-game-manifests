@@ -3,15 +3,14 @@
 #   "anyio",
 #   "pydantic-extra-types[semver]",
 #
-#   "play-launcher-sdk @ git+https://github.com/HellLord77/play-launcher-sdk.git@v0.2.1",
+#   "play-launcher-sdk @ git+https://github.com/HellLord77/play-launcher-sdk.git@v0.2.2",
 #   "tail-launcher-sdk @ git+https://github.com/HellLord77/tail-launcher-sdk.git@v0.2.3",
 # ]
 # ///
 
-from argparse import ArgumentParser
-
 from anyio import Path, run
-from play_launcher_sdk import AsyncLauncher, GameBiz
+from play_launcher_sdk import AsyncLauncher, ChinaId, GameBiz, GlobalId
+from play_launcher_sdk.id import Id
 from play_launcher_sdk.models.game_package import GamePackage
 from pydantic_extra_types.semantic_version import SemanticVersion
 from tail_launcher_sdk.enums import DiffType, DownloadMode
@@ -43,7 +42,7 @@ def index_version(manifest: GameManifest, version: SemanticVersion) -> int | Non
 
 
 def play_package_to_tail_version(
-        package: GamePackage, assets: VersionAssets
+    package: GamePackage, assets: VersionAssets
 ) -> GameVersion:
     version = GameVersion(
         metadata=VersionMetadata(
@@ -113,11 +112,11 @@ def play_package_to_tail_version(
     return version
 
 
-async def append(biz: GameBiz):
+async def append(id: Id, biz: GameBiz):
     path = Path(__file__).parent / "generated" / f"{biz}.json"
     print(f"[#] {biz}: {path}")
 
-    launcher = AsyncLauncher()
+    launcher = AsyncLauncher(id)
     packages = await launcher.get_game_packages()
 
     read = await path.read_text()
@@ -145,19 +144,20 @@ async def append(biz: GameBiz):
 
 
 async def main():
-    bizs = GameBiz.HONKAI_STAR_RAIL_GLOBAL, GameBiz.ZENLESS_ZONE_ZERO_GLOBAL
+    play = {
+        GlobalId.OFFICIAL: (
+            GameBiz.HONKAI_STAR_RAIL_GLOBAL,
+            GameBiz.ZENLESS_ZONE_ZERO_GLOBAL,
+        ),
+        ChinaId.OFFICIAL: (
+            GameBiz.HONKAI_STAR_RAIL_CHINA,
+            GameBiz.ZENLESS_ZONE_ZERO_CHINA,
+        ),
+    }
 
-    parser = ArgumentParser()
-    subparsers = parser.add_subparsers(dest="biz")
-    for biz in bizs:
-        subparsers.add_parser(biz)
-
-    args = parser.parse_args()
-    if args.biz is None:
+    for id, bizs in play.items():
         for biz in bizs:
-            await append(biz)
-    else:
-        await append(args.biz)
+            await append(id, biz)
 
 
 if __name__ == "__main__":
