@@ -28,7 +28,6 @@ from tail_launcher_sdk.models.version_metadata import VersionMetadata
 if TYPE_CHECKING:
     from collections.abc import Iterable
 
-    from play_launcher_sdk.launcher_id import LauncherId
     from play_launcher_sdk.models.game_package import GamePackage
     from pydantic_extra_types.semantic_version import SemanticVersion
 
@@ -43,6 +42,7 @@ PLAY_ID_TO_TAIL_REGION = {
 
 def find[T](models: list[T], biz: GameBiz) -> T | None:
     for model in models:
+        # noinspection PyUnresolvedReferences
         if getattr(model, "game", model).biz == biz:
             return model
 
@@ -57,8 +57,7 @@ def index_version(manifest: GameManifest, version: SemanticVersion) -> int | Non
     return None
 
 
-async def get_paths(id: LauncherId, biz: GameBiz) -> GamePaths:
-    launcher = AsyncLauncher(id)
+async def get_paths(launcher: AsyncLauncher, biz: GameBiz) -> GamePaths:
     configs = await launcher.get_game_configs()
     config = find(configs.launch_configs, biz)
     assert config is not None
@@ -82,9 +81,9 @@ async def get_assets(launcher: AsyncLauncher, biz: GameBiz) -> VersionAssets | N
     games = await launcher.get_games()
     status = find(games.games, biz)
     assert status is not None
-    assert status.display.icon.url != ""
 
     for background in info.backgrounds:
+        assert status.display.icon.url != ""
         assert background.background.url != ""
 
         return VersionAssets(
@@ -170,9 +169,7 @@ def play_package_to_tail_version(package: GamePackage) -> GameVersion:
     )
 
 
-async def get_version(id: LauncherId, biz: GameBiz) -> GameVersion:
-    launcher = AsyncLauncher(id)
-
+async def get_version(launcher: AsyncLauncher, biz: GameBiz) -> GameVersion:
     packages = await launcher.get_game_packages()
     package = find(packages.game_packages, biz)
     assert package is not None
@@ -193,12 +190,14 @@ def update_region_code(version: GameVersion, region_code: RegionCode) -> None:
         version.audio.full[index] = file.model_copy(update={"region_code": region_code})
 
 
-async def get_version_bh3(id: GlobalLauncherId, append_ids: Iterable[GlobalLauncherId]) -> GameVersion:
-    version = await get_version(id, GameBiz.HONKAI_IMPACT_3RD_GLOBAL)
-    update_region_code(version, PLAY_ID_TO_TAIL_REGION[id])
+async def get_version_bh3(launcher: AsyncLauncher, append_ids: Iterable[GlobalLauncherId]) -> GameVersion:
+    assert isinstance(launcher.id, GlobalLauncherId)
+    version = await get_version(launcher, GameBiz.HONKAI_IMPACT_3RD_GLOBAL)
+    update_region_code(version, PLAY_ID_TO_TAIL_REGION[launcher.id])
 
     for append_id in append_ids:
-        append_version = await get_version(append_id, GameBiz.HONKAI_IMPACT_3RD_GLOBAL)
+        append_launcher = AsyncLauncher(append_id)
+        append_version = await get_version(append_launcher, GameBiz.HONKAI_IMPACT_3RD_GLOBAL)
         update_region_code(append_version, PLAY_ID_TO_TAIL_REGION[append_id])
 
         version.game.full.extend(append_version.game.full)
@@ -207,7 +206,7 @@ async def get_version_bh3(id: GlobalLauncherId, append_ids: Iterable[GlobalLaunc
     return version
 
 
-async def append_manifest(id: LauncherId, biz: GameBiz) -> None:
+async def append_manifest(launcher: AsyncLauncher, biz: GameBiz) -> None:
     path = await Path.cwd() / "generated" / f"{biz}.json"
     print(f"[#] {biz}: {path}")
 
@@ -215,13 +214,13 @@ async def append_manifest(id: LauncherId, biz: GameBiz) -> None:
     manifest = GameManifest.model_validate_json(read)
 
     if biz == GameBiz.HONKAI_IMPACT_3RD_GLOBAL:
-        assert isinstance(id, GlobalLauncherId)
+        assert isinstance(launcher.id, GlobalLauncherId)
         append_ids = list(PLAY_ID_TO_TAIL_REGION)
-        append_ids.remove(id)
+        append_ids.remove(launcher.id)
 
-        version = await get_version_bh3(id, append_ids)
+        version = await get_version_bh3(launcher, append_ids)
     else:
-        version = await get_version(id, biz)
+        version = await get_version(launcher, biz)
 
     parts = manifest.display_name.rsplit(maxsplit=1)
     parts.insert(1, str(version.metadata.version))
@@ -237,7 +236,7 @@ async def append_manifest(id: LauncherId, biz: GameBiz) -> None:
         print(f"[~] {biz}: {version.metadata.version}")
         manifest.game_versions[index] = version
 
-    paths = await get_paths(id, biz)
+    paths = await get_paths(launcher, biz)
     manifest = manifest.model_copy(
         update={"latest_version": version.metadata.version, "paths": paths, "assets": version.assets}
     )
@@ -266,9 +265,10 @@ async def main() -> None:
         ),
     }
 
-    for id, bizs in play.items():
+    for id_, bizs in play.items():
+        launcher = AsyncLauncher(id_)
         for biz in bizs:
-            await append_manifest(id, biz)
+            await append_manifest(launcher, biz)
 
 
 if __name__ == "__main__":
