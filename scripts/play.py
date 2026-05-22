@@ -1,23 +1,17 @@
-# /// script
-# dependencies = [
-#   "anyio",
-#   "pydantic-extra-types[semver]",
-#
-#   "play-launcher-sdk @ git+https://github.com/HellLord77/play-launcher-sdk.git@v0.3.1",
-#   "tail-launcher-sdk @ git+https://github.com/HellLord77/tail-launcher-sdk.git@v0.2.4",
-# ]
-# ///
-
 from pathlib import PurePosixPath
-from typing import Iterable
+from typing import TYPE_CHECKING
 
-from anyio import Path, run
-from play_launcher_sdk import AsyncLauncher, ChinaLauncherId, GameBiz, GlobalLauncherId
-from play_launcher_sdk.launcher_id import LauncherId
-from play_launcher_sdk.models.game_package import GamePackage
+from anyio import Path
+from anyio import run
+from play_launcher_sdk import AsyncLauncher
+from play_launcher_sdk import ChinaLauncherId
+from play_launcher_sdk import GameBiz
+from play_launcher_sdk import GlobalLauncherId
 from pydantic import HttpUrl
-from pydantic_extra_types.semantic_version import SemanticVersion
-from tail_launcher_sdk.enums import DiffType, DirType, DownloadMode, RegionCode
+from tail_launcher_sdk.enums import DiffType
+from tail_launcher_sdk.enums import DirType
+from tail_launcher_sdk.enums import DownloadMode
+from tail_launcher_sdk.enums import RegionCode
 from tail_launcher_sdk.models import GameManifest
 from tail_launcher_sdk.models.diff_audio_file import DiffAudioFile
 from tail_launcher_sdk.models.diff_game_file import DiffGameFile
@@ -30,6 +24,13 @@ from tail_launcher_sdk.models.version_assets import VersionAssets
 from tail_launcher_sdk.models.version_audio_files import VersionAudioFiles
 from tail_launcher_sdk.models.version_game_files import VersionGameFiles
 from tail_launcher_sdk.models.version_metadata import VersionMetadata
+
+if TYPE_CHECKING:
+    from collections.abc import Iterable
+
+    from play_launcher_sdk.launcher_id import LauncherId
+    from play_launcher_sdk.models.game_package import GamePackage
+    from pydantic_extra_types.semantic_version import SemanticVersion
 
 PLAY_ID_TO_TAIL_REGION = {
     GlobalLauncherId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_ASIA: RegionCode.ASIA,
@@ -68,35 +69,26 @@ async def get_paths(id: LauncherId, biz: GameBiz) -> GamePaths:
         installation_dir=PurePosixPath(config.installation_dir),
         screenshot_dir=PurePosixPath(config.game_screenshot_dir),
         screenshot_dir_relative_to=(
-            DirType.DATA
-            if config.game_screenshot_dir.parts[0].endswith("_Data")
-            else DirType.GAME
+            DirType.DATA if config.game_screenshot_dir.parts[0].endswith("_Data") else DirType.GAME
         ),
     )
 
 
-async def get_assets(
-    launcher: AsyncLauncher,
-    biz: GameBiz,
-) -> VersionAssets | None:
+async def get_assets(launcher: AsyncLauncher, biz: GameBiz) -> VersionAssets | None:
     all_basic_info = await launcher.get_all_game_basic_info()
     info = find(all_basic_info.game_info_list, biz)
     assert info is not None
 
+    games = await launcher.get_games()
+    status = find(games.games, biz)
+    assert status is not None
+    assert status.display.icon.url != ""
+
     for background in info.backgrounds:
-        if background.icon.url == "":
-            games = await launcher.get_games()
-            status = find(games.games, biz)
-            assert status is not None
-
-            assert status.display.icon.url != ""
-            icon = status.display.icon.url
-        else:
-            icon = background.icon.url
-
         assert background.background.url != ""
+
         return VersionAssets(
-            game_icon=icon,
+            game_icon=status.display.icon.url,
             game_background=background.background.url,
             game_live_background=background.video.url,
         )
@@ -201,9 +193,7 @@ def update_region_code(version: GameVersion, region_code: RegionCode) -> None:
         version.audio.full[index] = file.model_copy(update={"region_code": region_code})
 
 
-async def get_version_bh3(
-    id: GlobalLauncherId, append_ids: Iterable[GlobalLauncherId]
-) -> GameVersion:
+async def get_version_bh3(id: GlobalLauncherId, append_ids: Iterable[GlobalLauncherId]) -> GameVersion:
     version = await get_version(id, GameBiz.HONKAI_IMPACT_3RD_GLOBAL)
     update_region_code(version, PLAY_ID_TO_TAIL_REGION[id])
 
@@ -217,8 +207,8 @@ async def get_version_bh3(
     return version
 
 
-async def append_manifest(id: LauncherId, biz: GameBiz):
-    path = Path(__file__).parent / "generated" / f"{biz}.json"
+async def append_manifest(id: LauncherId, biz: GameBiz) -> None:
+    path = await Path.cwd() / "generated" / f"{biz}.json"
     print(f"[#] {biz}: {path}")
 
     read = await path.read_text()
@@ -236,11 +226,7 @@ async def append_manifest(id: LauncherId, biz: GameBiz):
     parts = manifest.display_name.rsplit(maxsplit=1)
     parts.insert(1, str(version.metadata.version))
     version = version.model_copy(
-        update={
-            "metadata": version.metadata.model_copy(
-                update={"versioned_name": " ".join(parts)}
-            )
-        }
+        update={"metadata": version.metadata.model_copy(update={"versioned_name": " ".join(parts)})}
     )
 
     index = index_version(manifest, version.metadata.version)
@@ -253,11 +239,7 @@ async def append_manifest(id: LauncherId, biz: GameBiz):
 
     paths = await get_paths(id, biz)
     manifest = manifest.model_copy(
-        update={
-            "latest_version": version.metadata.version,
-            "paths": paths,
-            "assets": version.assets,
-        }
+        update={"latest_version": version.metadata.version, "paths": paths, "assets": version.assets}
     )
     write = manifest.model_dump_json(indent=2)
 
@@ -268,11 +250,9 @@ async def append_manifest(id: LauncherId, biz: GameBiz):
         await path.write_text(write)
 
 
-async def main():
+async def main() -> None:
     play = {
-        GlobalLauncherId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_GLOBAL: (
-            GameBiz.HONKAI_IMPACT_3RD_GLOBAL,
-        ),
+        GlobalLauncherId.EPIC_GOOGLE_HONKAI_IMPACT_3RD_GLOBAL: (GameBiz.HONKAI_IMPACT_3RD_GLOBAL,),
         GlobalLauncherId.OFFICIAL: (
             GameBiz.GENSHIN_IMPACT_GLOBAL,
             GameBiz.HONKAI_STAR_RAIL_GLOBAL,

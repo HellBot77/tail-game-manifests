@@ -17,10 +17,10 @@ jobs:
 
       - name: Copy to generated
         run: |
-          mkdir -p scripts/generated
+          mkdir -p generated
           jq -r .manifests[] repository.json | while read -r manifest; do
             echo "Copying manifest: $manifest"
-            cp $manifest scripts/generated/
+            cp $manifest generated
           done
 
       - name: Run scripts
@@ -41,7 +41,7 @@ jobs:
           done
 
       - name: Move from generated
-        run: mv scripts/generated/*.json .
+        run: mv generated/*.json .
 
       - name: Push changes
         run: |
