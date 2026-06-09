@@ -22,8 +22,8 @@
       },
       "assets": {
         "game_icon": "https://fastcdn.hoyoverse.com/static-resource-v2/2024/05/30/2e81b12276a2260c10133124e6ead00e_127960437642481968.png",
-        "game_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/05/19/a53c1faa4a341cfc70428797cacb0006_802939578845907489.webp",
-        "game_live_background": ""
+        "game_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/06/05/f8637e52179c601d2e2116ec3e59eb6e_5083465891777819805.webp",
+        "game_live_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/06/05/b472ec2cf3337b8d013ac9539b590434_4553449170472217425.webm"
       },
       "game": {
         "full": [
@@ -249,8 +249,8 @@
   },
   "assets": {
     "game_icon": "https://fastcdn.hoyoverse.com/static-resource-v2/2024/05/30/2e81b12276a2260c10133124e6ead00e_127960437642481968.png",
-    "game_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/05/19/a53c1faa4a341cfc70428797cacb0006_802939578845907489.webp",
-    "game_live_background": ""
+    "game_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/06/05/f8637e52179c601d2e2116ec3e59eb6e_5083465891777819805.webp",
+    "game_live_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/06/05/b472ec2cf3337b8d013ac9539b590434_4553449170472217425.webm"
   },
   "extra": {
     "preload": {},
