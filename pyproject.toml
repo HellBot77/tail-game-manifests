@@ -1,5 +1,5 @@
 [project]
-name = "game-manifests"
+name = "tail-game-manifests"
 version = "0.0.1"
 requires-python = "~=3.14.0"
 dependencies = [
@@ -12,7 +12,7 @@ dependencies = [
 [dependency-groups]
 dev = ["ruff"]
 play = [
-    "play-launcher-sdk @ git+https://github.com/HellLord77/play-launcher-sdk.git@v0.3.1",
+    "play-launcher-sdk @ git+https://github.com/HellLord77/play-launcher-sdk.git@v0.3.4",
 ]
 
 [tool.uv]
