@@ -2,8 +2,258 @@
   "version": 1,
   "display_name": "ZenlessZoneZero (China)",
   "biz": "nap_cn",
-  "latest_version": "3.0.0",
+  "latest_version": "3.1.0",
   "game_versions": [
+    {
+      "metadata": {
+        "versioned_name": "ZenlessZoneZero 3.1.0 (China)",
+        "version": "3.1.0",
+        "download_mode": "DOWNLOAD_MODE_FILE",
+        "game_hash": "",
+        "index_file": "",
+        "res_list_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/SplitAudioZip",
+        "diff_list_url": {
+          "game": "",
+          "en_us": "",
+          "zh_cn": "",
+          "ja_jp": "",
+          "ko_kr": ""
+        }
+      },
+      "assets": {
+        "game_icon": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/07/03/6e36d10305a17c8b02d20f988a99d488_1978274158815685100.png",
+        "game_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/07/23/b6a0494d0222066c1b962eccf92d7412_8890229846715017460.webp",
+        "game_live_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/07/23/ac4360ca5c3247dd5630ecb5a261d9ca_5248302407344042574.webm"
+      },
+      "game": {
+        "full": [
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/VolumeZip/juequling_3.1.0_AS.zip.001",
+            "compressed_size": 7763656704,
+            "decompressed_size": 17080044749,
+            "file_hash": "469ccd663444413d973d8a8580c7e03a",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/VolumeZip/juequling_3.1.0_AS.zip.002",
+            "compressed_size": 7763656704,
+            "decompressed_size": 17080044749,
+            "file_hash": "43a48c7f24de0cc9d4355a2031139842",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/VolumeZip/juequling_3.1.0_AS.zip.003",
+            "compressed_size": 7763656704,
+            "decompressed_size": 17080044749,
+            "file_hash": "7ced2c72c933903d02c1834fd87cbdeb",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/VolumeZip/juequling_3.1.0_AS.zip.004",
+            "compressed_size": 7763656704,
+            "decompressed_size": 17080044749,
+            "file_hash": "61d89b7a5943e1797703b98b844b5774",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/VolumeZip/juequling_3.1.0_AS.zip.005",
+            "compressed_size": 7763656704,
+            "decompressed_size": 17080044749,
+            "file_hash": "02dd2ba98a481b5caec96b6d322ab3bf",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/VolumeZip/juequling_3.1.0_AS.zip.006",
+            "compressed_size": 7763656704,
+            "decompressed_size": 17080044749,
+            "file_hash": "2906d76459aaac12a3a9108f0bd958c7",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/VolumeZip/juequling_3.1.0_AS.zip.007",
+            "compressed_size": 7763656704,
+            "decompressed_size": 17080044749,
+            "file_hash": "73a00c8984778343eb07e39e7d109c93",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/VolumeZip/juequling_3.1.0_AS.zip.008",
+            "compressed_size": 7763656704,
+            "decompressed_size": 17080044749,
+            "file_hash": "16b403caa30a621da7ff088d52f21f94",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/VolumeZip/juequling_3.1.0_AS.zip.009",
+            "compressed_size": 7763656704,
+            "decompressed_size": 17080044749,
+            "file_hash": "c936c7ea11da2f369afd9fa6c1eeafe8",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/VolumeZip/juequling_3.1.0_AS.zip.010",
+            "compressed_size": 7762336430,
+            "decompressed_size": 17077140147,
+            "file_hash": "b43279a3f35d4ef9b8799f01890bb236",
+            "file_path": "",
+            "region_code": ""
+          }
+        ],
+        "diff": [
+          {
+            "file_url": "https://autopatchcn.juequling.com/pclauncher/nap_cn/game_3.0.0_3.1.0_hdiff_sABdUGuRqjfPJLvX.zip",
+            "compressed_size": 12076048900,
+            "decompressed_size": 25028401020,
+            "file_hash": "9d622ff6d9879e8c03861e4fe2b2d848",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.0.0",
+            "delete_files": []
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/pclauncher/nap_cn/game_2.8.0_3.1.0_hdiff_SVraNWbtgDmVsvrN.zip",
+            "compressed_size": 17307600653,
+            "decompressed_size": 35547244826,
+            "file_hash": "0f7642707ddd33988be618301be0e8df",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "2.8.0",
+            "delete_files": []
+          }
+        ]
+      },
+      "audio": {
+        "full": [
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/audio_zip_Cn.zip",
+            "compressed_size": 4037745866,
+            "decompressed_size": 8883040906,
+            "file_hash": "7404f4e2a4cf64dd3f979e540583aa92",
+            "file_path": "",
+            "language": "zh-cn",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/audio_zip_En.zip",
+            "compressed_size": 4256949356,
+            "decompressed_size": 9365288584,
+            "file_hash": "58854af4ca89d379f13860e2c46819c4",
+            "file_path": "",
+            "language": "en-us",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/audio_zip_Jp.zip",
+            "compressed_size": 4730680644,
+            "decompressed_size": 10407497417,
+            "file_hash": "e032cab4b031c752e4b5d67167aeec03",
+            "file_path": "",
+            "language": "ja-jp",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/package_download/op/client_app/download/20260713164711_SymabxOM0HSyfpFm/audio_zip_Kr.zip",
+            "compressed_size": 4495103071,
+            "decompressed_size": 9889226757,
+            "file_hash": "303113608dfb1110735e46ed9b524db2",
+            "file_path": "",
+            "language": "ko-kr",
+            "region_code": ""
+          }
+        ],
+        "diff": [
+          {
+            "file_url": "https://autopatchcn.juequling.com/pclauncher/nap_cn/audio_zh-cn_3.0.0_3.1.0_hdiff_UTKEKktIirTkPGhS.zip",
+            "compressed_size": 298638430,
+            "decompressed_size": 608985050,
+            "file_hash": "fc6cedd8b9c15c88567ae3f6f2d4b612",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.0.0",
+            "language": "zh-cn"
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/pclauncher/nap_cn/audio_en-us_3.0.0_3.1.0_hdiff_vdszhgxmIsrmGyuA.zip",
+            "compressed_size": 373065612,
+            "decompressed_size": 757832478,
+            "file_hash": "420e19c5a554a55fa9de7e7b4ac87769",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.0.0",
+            "language": "en-us"
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/pclauncher/nap_cn/audio_ja-jp_3.0.0_3.1.0_hdiff_ZQqvwVjjciyxcFCx.zip",
+            "compressed_size": 370382731,
+            "decompressed_size": 753405304,
+            "file_hash": "ce8d79df581c9683eb982664211c0a50",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.0.0",
+            "language": "ja-jp"
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/pclauncher/nap_cn/audio_ko-kr_3.0.0_3.1.0_hdiff_vrPMeDCgJWiNVFxc.zip",
+            "compressed_size": 477110320,
+            "decompressed_size": 966781950,
+            "file_hash": "a8bf86e8d04141c6f8428ebd22dbd598",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.0.0",
+            "language": "ko-kr"
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/pclauncher/nap_cn/audio_zh-cn_2.8.0_3.1.0_hdiff_FGYjIiMBljeMbvpC.zip",
+            "compressed_size": 584450725,
+            "decompressed_size": 1181667254,
+            "file_hash": "bf29df4b2212c8e4c991b14cbce3e667",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "2.8.0",
+            "language": "zh-cn"
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/pclauncher/nap_cn/audio_en-us_2.8.0_3.1.0_hdiff_JHojAweqeMlSQVJN.zip",
+            "compressed_size": 557908904,
+            "decompressed_size": 1128278515,
+            "file_hash": "3d65635c3c83dcac26f6ba034454cb1d",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "2.8.0",
+            "language": "en-us"
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/pclauncher/nap_cn/audio_ja-jp_2.8.0_3.1.0_hdiff_fqJMWExtaiERlnjV.zip",
+            "compressed_size": 582292847,
+            "decompressed_size": 1178613540,
+            "file_hash": "5111d3a306bc466252be7c09700b88f4",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "2.8.0",
+            "language": "ja-jp"
+          },
+          {
+            "file_url": "https://autopatchcn.juequling.com/pclauncher/nap_cn/audio_ko-kr_2.8.0_3.1.0_hdiff_QwPYlOZMTeHBdiPb.zip",
+            "compressed_size": 689361100,
+            "decompressed_size": 1392452342,
+            "file_hash": "52b1a3aee3dde89f06a1b01880d40dc1",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "2.8.0",
+            "language": "ko-kr"
+          }
+        ]
+      }
+    },
     {
       "metadata": {
         "versioned_name": "ZenlessZoneZero 3.0.0 (China)",
@@ -514,9 +764,9 @@
     "screenshot_dir_relative_to": "game_dir"
   },
   "assets": {
-    "game_icon": "https://launcher-webstatic.mihoyo.com/launcher-public/2025/06/18/894b89b5aaea805f6420156c7c07a1a3_6035695844148120.png",
-    "game_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/07/07/c43874494e7a97e3e3f8e6cd3e94aa12_2408587304121557525.webp",
-    "game_live_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/07/07/7bf7789e26944e7d88910c4899dec0bc_2603923515534545670.webm"
+    "game_icon": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/07/03/6e36d10305a17c8b02d20f988a99d488_1978274158815685100.png",
+    "game_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/07/23/b6a0494d0222066c1b962eccf92d7412_8890229846715017460.webp",
+    "game_live_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/07/23/ac4360ca5c3247dd5630ecb5a261d9ca_5248302407344042574.webm"
   },
   "extra": {
     "preload": {},
