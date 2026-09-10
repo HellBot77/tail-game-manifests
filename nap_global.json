@@ -2,8 +2,258 @@
   "version": 1,
   "display_name": "ZenlessZoneZero (Global)",
   "biz": "nap_global",
-  "latest_version": "3.1.0",
+  "latest_version": "3.2.0",
   "game_versions": [
+    {
+      "metadata": {
+        "versioned_name": "ZenlessZoneZero 3.2.0 (Global)",
+        "version": "3.2.0",
+        "download_mode": "DOWNLOAD_MODE_FILE",
+        "game_hash": "",
+        "index_file": "",
+        "res_list_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/SplitAudioZip",
+        "diff_list_url": {
+          "game": "",
+          "en_us": "",
+          "zh_cn": "",
+          "ja_jp": "",
+          "ko_kr": ""
+        }
+      },
+      "assets": {
+        "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/09/02/db01dfe29c36a283b774d295b2322b54_5536403786224870636.png",
+        "game_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/09/07/282df38cbd3d35b01b273d7d153d9400_6449815538685864374.webp",
+        "game_live_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/09/07/4cce94f51e9c284d57aca5b1e8eb4402_2004184150440516738.webm"
+      },
+      "game": {
+        "full": [
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/VolumeZip/ZenlessZoneZero_3.2.0_AS.zip.001",
+            "compressed_size": 7996440576,
+            "decompressed_size": 17592169268,
+            "file_hash": "3db6253663ea5154f04107c4efc5ca78",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/VolumeZip/ZenlessZoneZero_3.2.0_AS.zip.002",
+            "compressed_size": 7996440576,
+            "decompressed_size": 17592169268,
+            "file_hash": "adc5c4083e76d02d9d668df4ea8df422",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/VolumeZip/ZenlessZoneZero_3.2.0_AS.zip.003",
+            "compressed_size": 7996440576,
+            "decompressed_size": 17592169268,
+            "file_hash": "0aef2b702f3077e5ac7b42b9d162c0b6",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/VolumeZip/ZenlessZoneZero_3.2.0_AS.zip.004",
+            "compressed_size": 7996440576,
+            "decompressed_size": 17592169268,
+            "file_hash": "bfac886c75a802285ba569fd3b63ee8c",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/VolumeZip/ZenlessZoneZero_3.2.0_AS.zip.005",
+            "compressed_size": 7996440576,
+            "decompressed_size": 17592169268,
+            "file_hash": "7d5e187b143f6b840bf20a62ea3ba0c3",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/VolumeZip/ZenlessZoneZero_3.2.0_AS.zip.006",
+            "compressed_size": 7996440576,
+            "decompressed_size": 17592169268,
+            "file_hash": "68760ddcfec08dcb6e8f6aadeab50270",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/VolumeZip/ZenlessZoneZero_3.2.0_AS.zip.007",
+            "compressed_size": 7996440576,
+            "decompressed_size": 17592169268,
+            "file_hash": "b27ce359eebf1d71e57a5bbc2e99041f",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/VolumeZip/ZenlessZoneZero_3.2.0_AS.zip.008",
+            "compressed_size": 7996440576,
+            "decompressed_size": 17592169268,
+            "file_hash": "771113f31109d4621cb21d6c6ed8d9de",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/VolumeZip/ZenlessZoneZero_3.2.0_AS.zip.009",
+            "compressed_size": 7996440576,
+            "decompressed_size": 17592169268,
+            "file_hash": "ff71de122166ad1f6cd466c04c0f8a36",
+            "file_path": "",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/VolumeZip/ZenlessZoneZero_3.2.0_AS.zip.010",
+            "compressed_size": 7989821147,
+            "decompressed_size": 17577606524,
+            "file_hash": "0f75e49f2e4c5e1f53aa2892261ea8be",
+            "file_path": "",
+            "region_code": ""
+          }
+        ],
+        "diff": [
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/game_3.1.0_3.2.0_hdiff_lllCrkWvhadMjaTY.zip",
+            "compressed_size": 7225231090,
+            "decompressed_size": 15271920707,
+            "file_hash": "e937cb7e72b6c90a0d4970fd9baf545f",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.1.0",
+            "delete_files": []
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/game_3.0.0_3.2.0_hdiff_tzXXPwmMhrEpXNNm.zip",
+            "compressed_size": 15558708720,
+            "decompressed_size": 32057773897,
+            "file_hash": "8decfeb5738454e91c5e8dd0ddbae349",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.0.0",
+            "delete_files": []
+          }
+        ]
+      },
+      "audio": {
+        "full": [
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/audio_zip_Cn.zip",
+            "compressed_size": 4218427657,
+            "decompressed_size": 9280540846,
+            "file_hash": "6e5202ce5889fc1edfc5eef2fe491eaf",
+            "file_path": "",
+            "language": "zh-cn",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/audio_zip_En.zip",
+            "compressed_size": 4503969873,
+            "decompressed_size": 9908733721,
+            "file_hash": "4836dc7a191772a974516ae831f56469",
+            "file_path": "",
+            "language": "en-us",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/audio_zip_Jp.zip",
+            "compressed_size": 4973999098,
+            "decompressed_size": 10942798016,
+            "file_hash": "074a9041ee20c38725297cf38c7ccba5",
+            "file_path": "",
+            "language": "ja-jp",
+            "region_code": ""
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/package_download/op/client_app/os/download/20260822102736_LyqS8GNT2gQZojVb/audio_zip_Kr.zip",
+            "compressed_size": 4218427657,
+            "decompressed_size": 9280540846,
+            "file_hash": "62a5203d051d769131ef1b1d1f86df37",
+            "file_path": "",
+            "language": "ko-kr",
+            "region_code": ""
+          }
+        ],
+        "diff": [
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_ko-kr_3.1.0_3.2.0_hdiff_BkjYEVvJdVqNlzuW.zip",
+            "compressed_size": 326346262,
+            "decompressed_size": 664664117,
+            "file_hash": "e388e481414350a501bd43c607db9477",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.1.0",
+            "language": "ko-kr"
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_en-us_3.1.0_3.2.0_hdiff_TaspDbfDXZQKGTMT.zip",
+            "compressed_size": 321914793,
+            "decompressed_size": 655474828,
+            "file_hash": "d7cfcc57dd7ecc36758e48a6450f1fa4",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.1.0",
+            "language": "en-us"
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_ja-jp_3.1.0_3.2.0_hdiff_cQuxkDzalUDvwMrA.zip",
+            "compressed_size": 301231536,
+            "decompressed_size": 614803077,
+            "file_hash": "8e41ce2dcd7bea113a4d00a262a88780",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.1.0",
+            "language": "ja-jp"
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_zh-cn_3.1.0_3.2.0_hdiff_rSEADnyqUrvsYiYh.zip",
+            "compressed_size": 246338764,
+            "decompressed_size": 504376759,
+            "file_hash": "cc2c38a76548f68bdc33128d0e48a3f7",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.1.0",
+            "language": "zh-cn"
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_en-us_3.0.0_3.2.0_hdiff_gFpTxSuZnjHMBbCM.zip",
+            "compressed_size": 628987854,
+            "decompressed_size": 1270581724,
+            "file_hash": "3a3774a3cde20352e2fc0eddb8dc4e80",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.0.0",
+            "language": "en-us"
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_ja-jp_3.0.0_3.2.0_hdiff_RtLsfTkCraLLqmXs.zip",
+            "compressed_size": 623405814,
+            "decompressed_size": 1260900357,
+            "file_hash": "3c8eec7f86aa360542b40f97ece4b973",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.0.0",
+            "language": "ja-jp"
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_zh-cn_3.0.0_3.2.0_hdiff_AtmzATLpbForhWCg.zip",
+            "compressed_size": 488303701,
+            "decompressed_size": 989164112,
+            "file_hash": "67aaa59671f12dacc603bec9d83e6ec4",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.0.0",
+            "language": "zh-cn"
+          },
+          {
+            "file_url": "https://autopatchos.zenlesszonezero.com/pclauncher/nap_global/audio_ko-kr_3.0.0_3.2.0_hdiff_zCxlzDHQCfwijIqG.zip",
+            "compressed_size": 697081110,
+            "decompressed_size": 1407693671,
+            "file_hash": "15b4bc2fcd89a4323eea3ce89bd83f7d",
+            "file_path": "",
+            "diff_type": "hdiff",
+            "original_version": "3.0.0",
+            "language": "ko-kr"
+          }
+        ]
+      }
+    },
     {
       "metadata": {
         "versioned_name": "ZenlessZoneZero 3.1.0 (Global)",
@@ -764,9 +1014,9 @@
     "screenshot_dir_relative_to": "game_dir"
   },
   "assets": {
-    "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/07/03/cc8b0308b38e88a7aea2ef354bf22f25_3217043451246839286.png",
-    "game_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/08/17/467d79a09078b7e5a96a46c092f3d972_6212424333152206963.webp",
-    "game_live_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/08/17/f1ca2e4158a18b4a770bb956a07f8ea8_823680119809509683.webm"
+    "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/09/02/db01dfe29c36a283b774d295b2322b54_5536403786224870636.png",
+    "game_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/09/07/282df38cbd3d35b01b273d7d153d9400_6449815538685864374.webp",
+    "game_live_background": "https://fastcdn.hoyoverse.com/static-resource-v2/2026/09/07/4cce94f51e9c284d57aca5b1e8eb4402_2004184150440516738.webm"
   },
   "extra": {
     "preload": {},
