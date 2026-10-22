@@ -2,8 +2,79 @@
   "version": 1,
   "display_name": "HonkaiImpact 3rd (Global)",
   "biz": "bh3_global",
-  "latest_version": "9.0.0",
+  "latest_version": "9.1.0",
   "game_versions": [
+    {
+      "metadata": {
+        "versioned_name": "HonkaiImpact 3rd 9.1.0 (Global)",
+        "version": "9.1.0",
+        "download_mode": "DOWNLOAD_MODE_FILE",
+        "game_hash": "",
+        "index_file": "",
+        "res_list_url": "https://autopatchglb.honkaiimpact3.com/ptpublic/bh3_glb/20261013103030_ahd54S6IqfJvm6Mq/extract",
+        "diff_list_url": {
+          "game": "",
+          "en_us": "",
+          "zh_cn": "",
+          "ja_jp": "",
+          "ko_kr": ""
+        }
+      },
+      "assets": {
+        "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2024/09/25/3526a039dddb4c8ca9d1083555f5781b_6841086697744260757.png",
+        "game_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/10/19/3109441a7f86bd6d0421dd9617292ac7_2542799156989282617.webp",
+        "game_live_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/10/19/ace66dcccf57db5091fea17a63d71b95_8880896581634312010.webm"
+      },
+      "game": {
+        "full": [
+          {
+            "file_url": "https://autopatchglb.honkaiimpact3.com/ptpublic/bh3_glb/20261013103030_ahd54S6IqfJvm6Mq/BH3_v9.1.0_af4349d71387.7z",
+            "compressed_size": 27772773070,
+            "decompressed_size": 55556031900,
+            "file_hash": "abab464af4dd4df09274e1392c31b3ea",
+            "file_path": "",
+            "region_code": "glb_official"
+          },
+          {
+            "file_url": "https://autopatchasia.honkaiimpact3.com/ptpublic/bh3_tw/20261013103157_T5JkoY2jU1pbzxBT/BH3_v9.1.0_af4349d71387.7z",
+            "compressed_size": 27097243744,
+            "decompressed_size": 54204973248,
+            "file_hash": "72de42c52a6f61c4ab289cc0565ae2ed",
+            "file_path": "",
+            "region_code": "asia_official"
+          },
+          {
+            "file_url": "https://autopatchjp.honkaiimpact3.com/ptpublic/bh3_jp/20261013103346_QT74YO3ZN4MPoEqS/BH3_v9.1.0_af4349d71387.7z",
+            "compressed_size": 27003286363,
+            "decompressed_size": 54017058486,
+            "file_hash": "6b0764e23a63c479b1a1c7fe746b5db9",
+            "file_path": "",
+            "region_code": "jp_official"
+          },
+          {
+            "file_url": "https://autopatchkr.honkaiimpact3.com/ptpublic/bh3_kr/20261013103256_h5FStnCnbe94EL8D/BH3_v9.1.0_af4349d71387.7z",
+            "compressed_size": 27091031950,
+            "decompressed_size": 54192549660,
+            "file_hash": "fe38e83364cbab9152bc8179d4160243",
+            "file_path": "",
+            "region_code": "kr_official"
+          },
+          {
+            "file_url": "https://autopatchos.honkaiimpact3.com/ptpublic/bh3_overseas/20261013102715_EKWMRew0v68Q1hK3/BH3_v9.1.0_af4349d71387.7z",
+            "compressed_size": 28035445702,
+            "decompressed_size": 56081377164,
+            "file_hash": "bb5e8433e7d58ab2e875d38098652890",
+            "file_path": "",
+            "region_code": "overseas_official"
+          }
+        ],
+        "diff": []
+      },
+      "audio": {
+        "full": [],
+        "diff": []
+      }
+    },
     {
       "metadata": {
         "versioned_name": "HonkaiImpact 3rd 9.0.0 (Global)",
@@ -228,8 +299,8 @@
   },
   "assets": {
     "game_icon": "https://launcher-webstatic.hoyoverse.com/launcher-public/2024/09/25/3526a039dddb4c8ca9d1083555f5781b_6841086697744260757.png",
-    "game_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/08/18/9900718b657595460ff01b1c8d0f8615_5281564270835037520.webp",
-    "game_live_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/08/18/374a88078f60770c8cd377f3f0366a4d_6663067317640581409.webm"
+    "game_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/10/19/3109441a7f86bd6d0421dd9617292ac7_2542799156989282617.webp",
+    "game_live_background": "https://launcher-webstatic.hoyoverse.com/launcher-public/2026/10/19/ace66dcccf57db5091fea17a63d71b95_8880896581634312010.webm"
   },
   "extra": {
     "preload": {},
