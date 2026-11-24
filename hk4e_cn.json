@@ -22,8 +22,8 @@
       },
       "assets": {
         "game_icon": "https://launcher-webstatic.mihoyo.com/launcher-public/2025/10/14/9ebf1bc5af2d83ca5fca21adb49cf341_1713549758249501746.png",
-        "game_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/10/14/0b4171aa86e1e0da4e116ce572e3e71a_5985113461757232295.webp",
-        "game_live_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/10/28/23bb82e77d271193e9e9da25aa9e026f_500896509362557603.webm"
+        "game_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/11/04/008de1b8ed7a431f926dca8aa1fafcd8_4580824216874898789.webp",
+        "game_live_background": ""
       },
       "game": {
         "full": [
@@ -249,8 +249,8 @@
   },
   "assets": {
     "game_icon": "https://launcher-webstatic.mihoyo.com/launcher-public/2025/10/14/9ebf1bc5af2d83ca5fca21adb49cf341_1713549758249501746.png",
-    "game_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/10/14/0b4171aa86e1e0da4e116ce572e3e71a_5985113461757232295.webp",
-    "game_live_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/10/28/23bb82e77d271193e9e9da25aa9e026f_500896509362557603.webm"
+    "game_background": "https://launcher-webstatic.mihoyo.com/launcher-public/2026/11/04/008de1b8ed7a431f926dca8aa1fafcd8_4580824216874898789.webp",
+    "game_live_background": ""
   },
   "extra": {
     "preload": {},
